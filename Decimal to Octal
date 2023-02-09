@@ -1,0 +1,24 @@
+#include <stdio.h>
+#include <math.h>
+void decTooctal(int n)
+{
+    int octalNum[32];
+    int i = 0;
+    while (n > 0) {
+        octalNum[i] = n % 8;
+        n = n / 8;
+        i++;
+    }
+    for (int j = i - 1; j >= 0; j--)
+        printf("%d", octalNum[j]);
+}
+int main()
+{
+    int decimal;
+    printf("Enter a decimal number: ");
+    scanf("%d", &decimal);
+    printf("octal representation of %d is: ", decimal);
+    decTooctal(decimal);
+    return 0;
+}
+
